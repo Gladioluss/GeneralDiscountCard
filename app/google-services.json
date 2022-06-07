@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "206122477140",
+    "firebase_url": "https://alphabankproject-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "alphabankproject",
+    "storage_bucket": "alphabankproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206122477140:android:348709f2a5b5759937efc1",
+        "android_client_info": {
+          "package_name": "com.example.generaldiscountcard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206122477140-tei97kolad9pgijtc9daua6e58heqjs7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.generaldiscountcard",
+            "certificate_hash": "f8da8a7735b8710d0f918bcb4a232c82c5624ebb"
+          }
+        },
+        {
+          "client_id": "206122477140-tt4unhifdmcr3omtjuc047mmcvbgjueh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX8Xjns35K9OrxRd3UfpDt6llx85Qzp5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206122477140-tt4unhifdmcr3omtjuc047mmcvbgjueh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

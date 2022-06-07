@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GeneralDiscountCard</string>
+    <string name="title_home">Кошелёк</string>
+    <string name="title_dashboard">Добавить</string>
+    <string name="title_notifications">Меню</string>
+    <string name="card_name">Информация о карте</string>
+    <string name="title_card_number">Номер карты</string>
+    <string name="card_number">0000000000000000</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="card_name_hint">Название карты</string>
+    <string name="card_number_hint">Номер карты</string>
+    <string name="use_card">Использовать карту</string>
+    <string name="delete_card">Удалить карту</string>
+</resources>

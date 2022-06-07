@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_wallet">
+
+    <fragment
+        android:id="@+id/navigation_wallet"
+        android:name="com.example.generaldiscountcard.ui.walletScreen.WalletScreenFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_wallet_screen" >
+        <action
+            android:id="@+id/action_navigation_wallet_to_navigation_menu"
+            app:destination="@id/navigation_menu" />
+        <action
+            android:id="@+id/action_navigation_wallet_to_navigation_card_info"
+            app:destination="@id/navigation_card_info" />
+        <action
+            android:id="@+id/action_navigation_wallet_to_navigation_fill_data_new_card"
+            app:destination="@id/navigation_fill_data_new_card" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_menu"
+        android:name="com.example.generaldiscountcard.ui.menuScreen.MenuScreenFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_menu_screen" >
+        <action
+            android:id="@+id/action_navigation_menu_to_navigation_wallet"
+            app:destination="@id/navigation_wallet" />
+        <action
+            android:id="@+id/action_navigation_menu_to_navigation_fill_data_new_card"
+            app:destination="@id/navigation_fill_data_new_card" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_card_info"
+        android:name="com.example.generaldiscountcard.ui.cardInfoScreen.CardInfoScreenFragment"
+        android:label="@string/card_name"
+        tools:layout="@layout/fragment_card_info_screen" >
+        <action
+            android:id="@+id/action_navigation_card_info_to_navigation_wallet"
+            app:destination="@id/navigation_wallet" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_fill_data_new_card"
+        android:name="com.example.generaldiscountcard.ui.fillDataNewCardScreen.FillDataNewCardScreenFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_fill_data_new_card" >
+        <action
+            android:id="@+id/action_navigation_fill_data_new_card_to_navigation_wallet"
+            app:destination="@id/navigation_wallet" />
+        <action
+            android:id="@+id/action_navigation_fill_data_new_card_to_navigation_menu"
+            app:destination="@id/navigation_menu" />
+    </fragment>
+
+</navigation>
