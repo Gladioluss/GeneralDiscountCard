@@ -10,6 +10,7 @@ import com.example.generaldiscountcard.R
 import com.example.generaldiscountcard.dataClasses.Card
 import com.example.generaldiscountcard.dataClasses.User
 import com.example.generaldiscountcard.dataClasses.cardArrayList
+import com.example.generaldiscountcard.dataClasses.cardNamesList
 import com.example.generaldiscountcard.databinding.FragmentFillDataNewCardBinding
 import com.example.generaldiscountcard.utilits.*
 
@@ -58,6 +59,7 @@ class FillDataNewCardScreenFragment : Fragment() {
         REF_DATABASE_ROOT.child(NODE_USERS).child(USER_NAME).updateChildren(cardDataMap)
 
         cardArrayList.add(Card(cardName, cardNumber.toBigInteger(), cardImageFront, cardImageBack))
+        cardNamesList.add(cardName)
 
    }
 

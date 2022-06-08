@@ -12,4 +12,7 @@
     <string name="card_number_hint">Номер карты</string>
     <string name="use_card">Использовать карту</string>
     <string name="delete_card">Удалить карту</string>
+    <string name="provider_gps">GPS</string>
+    <string name="provider_network">Network</string>
+    <string name="location_settings">Location settings</string>
 </resources>

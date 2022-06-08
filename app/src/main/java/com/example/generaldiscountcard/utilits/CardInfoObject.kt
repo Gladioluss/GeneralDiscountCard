@@ -17,3 +17,4 @@ object User {
 }
 
 var cardArrayList : ArrayList<Card> = ArrayList()
+var cardNamesList : ArrayList<String> = ArrayList()

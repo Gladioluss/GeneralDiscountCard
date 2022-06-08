@@ -1,12 +1,17 @@
 package com.example.generaldiscountcard.ui.walletScreen
 
+import android.Manifest
 import android.app.Activity
-import android.os.Build
+import android.content.Context
+import android.content.pm.PackageManager
+import android.location.Location
+import android.location.LocationManager
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.GridView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
@@ -15,12 +20,19 @@ import com.example.generaldiscountcard.adapters.GridViewAdapter
 import com.example.generaldiscountcard.dataClasses.CardInfoObject
 import com.example.generaldiscountcard.dataClasses.cardArrayList
 import com.example.generaldiscountcard.databinding.FragmentWalletScreenBinding
+import com.example.generaldiscountcard.utilits.GPSUtilits
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+
+
 
 
 class WalletScreenFragment : Fragment() {
 
     private var _binding: FragmentWalletScreenBinding? = null
     private val binding get() = _binding!!
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,6 +42,9 @@ class WalletScreenFragment : Fragment() {
         _binding = FragmentWalletScreenBinding.inflate(inflater, container, false)
         val root: View = binding.root
 //        val view: View = inflater.inflate(R.layout.fragment_wallet_screen, container, false)
+        GPSUtilits.getInstance().findDeviceLocation(requireContext() as Activity)
+        Log.d("GPS", GPSUtilits.getInstance().longitude)
+        Log.d("GPS", GPSUtilits.getInstance().latitude)
 
         if (cardArrayList.isEmpty()) {
             val ft: FragmentTransaction = this.requireFragmentManager().beginTransaction()
@@ -61,8 +76,6 @@ class WalletScreenFragment : Fragment() {
         return root
     }
 
-
-
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
 //        setHasOptionsMenu(true)
@@ -85,7 +98,6 @@ class WalletScreenFragment : Fragment() {
 //            else -> super.onOptionsItemSelected(item)
 //        }
 //    }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
