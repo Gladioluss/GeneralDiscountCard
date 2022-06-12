@@ -1,22 +1,37 @@
 package com.example.generaldiscountcard.utilits
 
-import okhttp3.*
-import java.io.IOException
+import com.fasterxml.jackson.annotation.JsonProperty
 
 
-const val API_KEY: String = "8582cf6d-2b11-40c3-9ae5-f16f85a4815c"
-private val client = OkHttpClient()
+class YandexMapAPI(
+    @JsonProperty(value = "type") val type: String,
+    @JsonProperty(value = "properties") val properties: Properties,
+) {
+    class Properties(
+        @JsonProperty(value = "ResponseMetaData") val responseMetaData: ResponseMetaData,
+    ) {
+        class ResponseMetaData(
+            @JsonProperty(value = "SearchRequest") val searchRequest: SearchRequest,
+            @JsonProperty(value = "SearchResponse") val searchResponse: SearchResponse
+        ) {
+            class SearchRequest(
+                @JsonProperty(value = "request") val request: String,
+                @JsonProperty(value = "results") val results: Int,
+                @JsonProperty(value = "skip") val skip: Int,
+                @JsonProperty(value = "boundedBy") val boundedBy: ArrayList<ArrayList<Double>>
+            )
 
-class YandexMapAPI {
-
-//    fun getAddress(url: String){
-//        val request = Request.Builder()
-//            .url(""+ url)
-//            .build()
-//
-//        client.newCall(request).enqueue(object : Callback {
-//            override fun onFailure(call: Call, e: IOException) {}
-//            override fun onResponse(call: Call, response: Response) = println(response.body()?.string())
-//        })
-//    }
+            class SearchResponse(
+                @JsonProperty(value = "found") val found: Int,
+                @JsonProperty(value = "Point") val point: Point,
+                @JsonProperty(value = "boundedBy") val boundedBy: ArrayList<ArrayList<Double>>,
+                @JsonProperty(value = "display") val display: String
+            ) {
+                class Point(
+                    @JsonProperty(value = "type") val type: String,
+                    @JsonProperty(value = "coordinates") val found: ArrayList<Double>
+                )
+            }
+        }
+    }
 }
